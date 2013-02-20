@@ -27,11 +27,11 @@ namespace Xxf.Export
 
             strb.Append("{mso-style-parent:style0;");
 
-            strb.Append("font-family:\"Times New Roman\", serif;");
+            strb.Append("font-family:\"Times New Roman\", \"serif\";font-size: 11px;");
 
             strb.Append("mso-font-charset:0;");
             //数字到字符串
-            //strb.Append("mso-number-format:\"@\";}");
+            strb.Append("mso-number-format:\"@\";}");
 
             strb.Append("</style>");
 
@@ -91,7 +91,7 @@ namespace Xxf.Export
 
             strb.Append("");
 
-            strb.Append("</head><body style=\"font-family: 宋体\"><table align=\"center\" style='border-collapse:collapse;table-layout:fixed'><tr>");
+            strb.Append("</head><body style=\"font-family: 宋体;\"><table align=\"center\" style='border-collapse:collapse;table-layout:fixed'><tr>");
 
             if (entitys.Count == 0)
                 goto noData;
@@ -120,7 +120,7 @@ namespace Xxf.Export
                 strb.Append("<tr>");
                 for (int j = 0; j < filesCount; j++)
                 {
-                    strb.Append("<td class='xl26'>" + propertyInfos[j].GetValue(entity, null).ToString() + "</td>");
+                    strb.Append("<td class='xl26' style='font-size:12px'>" + propertyInfos[j].GetValue(entity, null) + "</td>");
                 }
                 strb.Append("</tr>");
             }
