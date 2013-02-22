@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extension\BindExtension.cs" />
     <Compile Include="UserControlAjax\SelectPropertyMetaDataProc.cs" />
     <Compile Include="UserControlAjax\SelectPropertyAttribute.cs" />
     <Compile Include="UserControlAjax\UserControlAjaxHandler.cs" />
