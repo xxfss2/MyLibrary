@@ -48,5 +48,16 @@ namespace Xxf.Extension
                 return result;
             else return null;
         }
+
+        public static T? TryParseEnum<T>(this string val)
+           where T : struct
+        {
+            if (string.IsNullOrEmpty(val))
+                return null;
+            T state ;
+            if(Enum.TryParse<T> (val,out state))
+                return state;
+            else return null;
+        }
     }
 }
