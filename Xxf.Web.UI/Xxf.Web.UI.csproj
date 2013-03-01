@@ -42,6 +42,7 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -53,6 +54,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extension\BindExtension.cs" />
+    <Compile Include="Response\AsyncActionResponse.cs" />
+    <Compile Include="Response\AsyncBindResponse.cs" />
+    <Compile Include="Response\Response.cs" />
     <Compile Include="UserControlAjax\SelectPropertyMetaDataProc.cs" />
     <Compile Include="UserControlAjax\SelectPropertyAttribute.cs" />
     <Compile Include="UserControlAjax\UserControlAjaxHandler.cs" />

@@ -6,8 +6,7 @@ using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Web.Script.Serialization;
-
+using Xxf.Web.UI;
 namespace Xxf.Web.UI.Control
 {
     public class Repeater : System.Web.UI.WebControls.Repeater, IPostBackEventHandler
@@ -38,20 +37,16 @@ namespace Xxf.Web.UI.Control
         {
             IsReRender = true;
             base.DataBind();
-            HttpContext.Current.Response.Clear();
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
             System.IO.StringWriter tw = new System.IO.StringWriter(sb);
             HtmlTextWriter htw = new HtmlTextWriter(tw);
-
             this.RenderControl(htw);
-            string[] result = new string[2];
-            result[0] = sb.ToString();
-            result[1] = dataCount.ToString();
-            JavaScriptSerializer serializer = new JavaScriptSerializer();
-            string resultStr = serializer.Serialize(result);
-            Context.Response.ContentType = "application/json;charset=UTF-8";
-            Context.Response.Write(resultStr);
-            Context.Response.End();
+
+            AsyncBindResponse asyncBind = new AsyncBindResponse();
+            asyncBind.DataCount = dataCount;
+            asyncBind.Html = sb.ToString();
+            asyncBind.Success = true;
+            asyncBind.AsyncResponse();
         }
         private void OnAsynBind()
         {
@@ -59,15 +54,7 @@ namespace Xxf.Web.UI.Control
             {
                 IsReRender = true;
                 AsynBind(this,EventArgs .Empty );
-                //System.Text.StringBuilder sb = new System.Text.StringBuilder();
-                //System.IO.StringWriter tw = new System.IO.StringWriter(sb);
-                //HtmlTextWriter htw = new HtmlTextWriter(tw);
-                //this.RenderControl(htw);
-                //JavaScriptSerializer serializer = new JavaScriptSerializer();
-                //string resultStr = serializer.Serialize(sb.ToString ());
-                //Context.Response.ContentType = "application/json;charset=UTF-8";
-                //Context.Response.Write(resultStr);
-                //Context.Response.End();
+
             }
         }
 

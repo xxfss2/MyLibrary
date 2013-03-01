@@ -65,6 +65,7 @@
     <Compile Include="AutoComplete.cs" />
     <Compile Include="Button.cs">
     </Compile>
+    <Compile Include="DropDownList.cs" />
     <Compile Include="Handles.cs" />
     <Compile Include="Interface\IAsynBindControl.cs" />
     <Compile Include="Interface\IClientScriptControl.cs" />
@@ -91,6 +92,12 @@
     <EmbeddedResource Include="SetSortPropertyFrm.resx">
       <DependentUpon>SetSortPropertyFrm.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Xxf.Web.UI\Xxf.Web.UI.csproj">
+      <Project>{EB7FF5D0-489C-4A13-97A0-11E457E64A14}</Project>
+      <Name>Xxf.Web.UI</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

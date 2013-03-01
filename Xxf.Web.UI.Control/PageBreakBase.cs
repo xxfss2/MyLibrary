@@ -63,7 +63,9 @@ namespace Xxf.Web.UI.Control
             get;
             set;
         }
-        public string ScriptId;
+        /// <summary>
+        /// 表格的外DIV
+        /// </summary>
         public string DivId;
         private string _RepeterID = null;
         public string RepeaterID {
@@ -94,7 +96,6 @@ namespace Xxf.Web.UI.Control
         public string GetScript()
         {
             DivId = this.Page.FindControl(TableControl).ClientID;
-            ScriptId = this.ClientID;
             return string.Format("var {0} = new Xxf.PageBreak('{0}',{1}, {2}, {3},'{4}');", this.ClientID, Break_Param.PageSize, Break_Param.PageIndex, Break_Param.DataCount, DivId);
         }
 
