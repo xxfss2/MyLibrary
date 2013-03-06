@@ -38,7 +38,7 @@ namespace Xxf.Web.UI.Control
                 }
                 return;
             }
-            IClientScriptControl scc = control as IClientScriptControl;
+            TabRadio scc = control as TabRadio;
             if (scc != null)
             {
                 sb.AppendLine(scc.GetScript());
