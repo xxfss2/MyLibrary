@@ -65,6 +65,7 @@
     <Compile Include="AutoComplete.cs" />
     <Compile Include="Button.cs">
     </Compile>
+    <Compile Include="Cache\ScriptCache.cs" />
     <Compile Include="DropDownList.cs" />
     <Compile Include="Handles.cs" />
     <Compile Include="Interface\IAsynBindControl.cs" />

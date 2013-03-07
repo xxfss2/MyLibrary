@@ -49,6 +49,12 @@ namespace Xxf.Web.UI.Control
             this.InputAttributes .Add ("onclick", MyClientId + ".show()");
             if (Hidden == false)
                 writer.AddStyleAttribute(HtmlTextWriterStyle.Display, "none");
+            var div = this.Page.FindControl(DivId);
+            if (div == null)
+            {
+                throw new InvalidOperationException("DIV id错误");
+            }
+            (div as IAttributeAccessor).SetAttribute("style", "display:none;");
             base.RenderControl(writer);
         }
 
@@ -62,7 +68,7 @@ namespace Xxf.Web.UI.Control
             {
                 throw new InvalidOperationException ("DIV id错误");
             }
-            (div as IAttributeAccessor).SetAttribute("style", "display:none;");
+
             StringBuilder sb=new StringBuilder ();
             sb.AppendFormat("var {0} = new Xxf.Tab(\"{1}\");", MyClientId, DivId);
             var asynControls = div.Controls;

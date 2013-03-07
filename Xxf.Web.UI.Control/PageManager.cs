@@ -17,13 +17,24 @@ namespace Xxf.Web.UI.Control
         protected override void OnPreRender(EventArgs e)
         {
             base.OnPreRender(e);
-            StringBuilder sbAllScript = new StringBuilder();
+            //判断是否有缓存
+            string key = Page.Request.FilePath;
+            string script = ScriptCache.GetScript(key);
+            if (string.IsNullOrEmpty(script))
+            {
+                StringBuilder sbAllScript = new StringBuilder();
 
-            //查找在页面中需要向客户端输出脚本的控件,并统一输出所有脚本
-            this.GetChildControlScript(sbAllScript, this.Page.Form);
+                //查找在页面中需要向客户端输出脚本的控件,并统一输出所有脚本
+                this.GetChildControlScript(sbAllScript, this.Page.Form);
+                script = sbAllScript.ToString();
+                this.Page.ClientScript.RegisterStartupScript(Page.GetType(), this.ClientID, script, true);
 
-
-            this.Page.ClientScript.RegisterStartupScript(Page.GetType(), this.ClientID,sbAllScript .ToString () , true);
+                ScriptCache.AddScript(key, script);
+            }
+            else
+            {
+                this.Page.ClientScript.RegisterStartupScript(Page.GetType(), this.ClientID, script, true);
+            }
         }
 
         private void GetChildControlScript(StringBuilder sb, System.Web.UI.Control control)
