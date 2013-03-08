@@ -39,8 +39,6 @@ namespace Xxf.Web.UI.Control
                 else
                     Sort_Param.SortRule = SortRules.ESC;
             }
-            else
-                Sort_Param = null;
         }
         protected void Page_Load(object sender, EventArgs e)
         {
