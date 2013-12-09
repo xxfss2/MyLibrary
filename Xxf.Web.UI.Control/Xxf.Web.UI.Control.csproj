@@ -71,6 +71,7 @@
     <Compile Include="Interface\IAsynBindControl.cs" />
     <Compile Include="Interface\IClientScriptControl.cs" />
     <Compile Include="Interface\ISelectParamControl.cs" />
+    <Compile Include="Interface\ISelectButtonControl.cs" />
     <Compile Include="PageBreakBase.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>

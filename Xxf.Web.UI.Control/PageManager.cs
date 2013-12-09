@@ -54,6 +54,9 @@ namespace Xxf.Web.UI.Control
             {
                 sb.AppendLine(scc.GetScript());
             }
+            ISelectButtonControl selectButton = control as ISelectButtonControl;
+            if (selectButton != null)
+                sb.AppendLine(selectButton.GetScript());
             return;
         }
     }

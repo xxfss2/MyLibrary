@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace Xxf.Web.UI.Control
 {
-    public class SelectButton : System.Web.UI.WebControls.Button, IClientScriptControl
+    public class SelectButton : System.Web.UI.WebControls.LinkButton, ISelectButtonControl
     {
         [TypeConverter (typeof (ControlIDConverter ))]
         public string PageBreakControl { get; set; }

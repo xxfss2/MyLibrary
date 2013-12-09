@@ -54,10 +54,16 @@ namespace Xxf.Extension
         {
             if (string.IsNullOrEmpty(val))
                 return null;
-            T state ;
-            if(Enum.TryParse<T> (val,out state))
-                return state;
-            else return null;
+
+            try
+            {
+                return (T)Enum.Parse(typeof(T), val);
+            }
+            catch
+            {
+                return null;
+            }
+
         }
     }
 }
