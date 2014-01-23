@@ -46,6 +46,7 @@
     <Compile Include="Export\Export.cs" />
     <Compile Include="Extension\DataConventerExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tool\Mail.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
