@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web.UI.WebControls;
-using Jiuzh.CoreBase;
+using Jiuzh.CoreBase.Repository;
 using System.ComponentModel;
 
 namespace Xxf.Web.UI.Control

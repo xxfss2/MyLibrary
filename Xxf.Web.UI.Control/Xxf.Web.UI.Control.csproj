@@ -39,7 +39,7 @@
   <ItemGroup>
     <Reference Include="Jiuzh.CoreBase, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\CoreLibrary\Jiuzh.CoreBase.dll</HintPath>
+      <HintPath>..\..\CoreLibrary\Jiuzh.CoreBase\bin\Release\Jiuzh.CoreBase.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
