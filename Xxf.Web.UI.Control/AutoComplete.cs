@@ -51,6 +51,9 @@ namespace Xxf.Web.UI.Control
         [TypeConverter (typeof (uint ))]
         public string MinStart { get; set; }
 
+        [TypeConverter(typeof(bool))]
+        public bool IsBuildFunc { get; set; } 
+
         protected virtual void OnAutoCompleteChanged(EventArgs e)
         {
             if (TextChanged != null)
@@ -78,7 +81,8 @@ namespace Xxf.Web.UI.Control
             {
                 sb.AppendFormat("{0}:{1}", Params .Keys [i], Params [i]);
             }
-            writer.AddAttribute("onkeyup", "AutoComplate(this,"+MinStart+",{" + sb.ToString () + "})");
+            if(IsBuildFunc)
+              writer.AddAttribute("onkeyup", "AutoComplate(this,"+MinStart+",{" + sb.ToString () + "})");
             base.RenderControl(writer);
         }
 
