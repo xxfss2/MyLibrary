@@ -27,8 +27,8 @@ namespace Xxf.Web.UI.Control
             else
             {
                 writer.AddAttribute("id", this.ClientID);
-                writer.AddStyleAttribute(HtmlTextWriterStyle.PaddingTop, "15px");
-                writer.AddStyleAttribute(HtmlTextWriterStyle.PaddingLeft, "15px");
+             //   writer.AddStyleAttribute(HtmlTextWriterStyle.PaddingTop, "15px");
+             //   writer.AddStyleAttribute(HtmlTextWriterStyle.PaddingLeft, "15px");
                 writer.RenderBeginTag(HtmlTextWriterTag.Div);
                 base.RenderControl(writer);
                 writer.RenderEndTag();
