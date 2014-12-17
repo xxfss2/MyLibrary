@@ -65,5 +65,12 @@ namespace Xxf.Extension
             }
 
         }
+
+
+
+        public static string TryToString(this DateTime? dt,string format)
+        {
+            return dt.HasValue ? dt.Value.ToString(format) : "";
+        }
     }
 }
